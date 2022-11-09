@@ -1,0 +1,24 @@
+openapi: 3.0.0
+tags:
+  - name: Hello World
+consumes:
+  - multipart/form-data
+parameters:
+  - in: formData
+    name: file
+    type: file
+    description: Select the file to extract text.
+    required: true
+  - in: formData
+    name: should_be_deleted
+    type: boolean
+    default: true
+    required: true
+    description: File should be delete on not
+responses:
+    '200':
+      description: Successful response
+    '400':
+      description: Bad Request
+    '500':
+      description: Internal Server Error
